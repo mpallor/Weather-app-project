@@ -20,13 +20,47 @@
     <title>Weather forecast</title>
   </head>
   <body>
-    <div class="container page-wrapper">
-      <img
-        src="images/sky.jpg"
-        alt="Sky photo"
-        class="background-photo"
-        width="700px"
-      />
+    <div class="content">
+      <div class="container page-wrap">
+        <form class="form-search">
+          <input
+            type="text"
+            placeholder="Search for a city..."
+            autofocus="on"
+            autocomplete="on"
+            class="search-field"
+          />
+        </form>
+        <h1>Warszawa</h1>
+        <div>Current weather</div>
+        <div>00:25 Monday, 8 Aug</div>
+        <div class="row">
+          <div class="col-6 current-temp">☁️19℃ | ℉</div>
+
+          <div class="col-3">
+            Feels like:
+            <div>19℃</div>
+          </div>
+          <div class="col-3">
+            Cloud cover:
+            <div>89%</div>
+          </div>
+          <div class="row">
+            <div class="col-6">Cloudy</div>
+            <div class="col-3">
+              Wind:
+              <div>13 km/h</div>
+            </div>
+            <div class="col-3">
+              Pressure:
+              <div>1022 hPa</div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
+    <a href="https://www.freepik.com/vectors/weather-report"
+      >Weather report vector created by titusurya - www.freepik.com</a
+    >
   </body>
 </html>
