@@ -1,7 +1,6 @@
 .content {
   max-width: 600px;
   margin: 20px auto;
-
   font-family: "Lato", sans-serif;
 }
 .page-wrap {
@@ -14,9 +13,13 @@
 }
 
 .search-field {
-  margin: 10px;
-  padding: 5px 10px;
-  border-radius: 10px;
+  margin: 15px;
+  border-radius: 15px;
+  position: relative;
+  left: -15px;
+}
+.btn-primary {
+  margin-top: 15px;
 }
 .city {
   font-size: 36px;
@@ -100,6 +103,7 @@
 footer {
   text-align: center;
   margin-bottom: 10px;
+  font-family: "Poppins", sans-serif;
 }
 .git-link {
   text-decoration: none;
