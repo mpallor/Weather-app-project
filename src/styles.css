@@ -1,7 +1,8 @@
 .content {
-  max-width: 700px;
-  margin: 0 auto;
-  padding: 30px 60px;
+  max-width: 600px;
+  margin: 20px auto;
+
+  font-family: "Lato", sans-serif;
 }
 .page-wrap {
   background-image: url(../images/sky.jpg);
@@ -17,7 +18,89 @@
   padding: 5px 10px;
   border-radius: 10px;
 }
+.city {
+  font-size: 36px;
+  padding-top: 10px;
+  color: #fff;
+}
+.current-weather-title {
+  color: #fff;
+  opacity: 60%;
+  line-height: 1.5;
+  font-size: 16px;
+}
+
+#current-date {
+  color: #fff;
+  font-size: 17px;
+  font-weight: bold;
+}
 .current-temp {
   line-height: 60px;
   font-size: 48px;
+}
+
+.unit {
+  vertical-align: super;
+  font-size: 60%;
+  font-size: 15px;
+}
+
+#celsius-link {
+  text-decoration: none;
+}
+#fahrenheit-link {
+  text-decoration: none;
+}
+.weather-description {
+  color: #fff;
+  position: relative;
+  top: 15px;
+}
+.feels {
+  color: #fff;
+  opacity: 50%;
+  font-size: 15px;
+  line-break: anywhere;
+}
+#feels-temp {
+  font-weight: bold;
+}
+.cloud-cover {
+  color: #fff;
+  opacity: 50%;
+  font-size: 15px;
+  line-break: anywhere;
+}
+#cloud-value {
+  font-weight: bold;
+}
+.wind {
+  color: #fff;
+  opacity: 50%;
+  font-size: 15px;
+  line-break: anywhere;
+  position: relative;
+  left: 10px;
+}
+#wind-value {
+  font-weight: bold;
+}
+.pressure {
+  color: #fff;
+  opacity: 50%;
+  font-size: 15px;
+  line-break: anywhere;
+  position: relative;
+  left: 10px;
+}
+#pressure-value {
+  font-weight: bold;
+}
+footer {
+  text-align: center;
+  margin-bottom: 10px;
+}
+.git-link {
+  text-decoration: none;
 }
