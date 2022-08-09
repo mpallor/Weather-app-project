@@ -43,13 +43,14 @@
             </div>
           </div>
         </form>
-        <h1 class="city">Warszawa</h1>
+        <h1 id="city">Warszawa</h1>
         <div class="current-weather-title">Current weather</div>
         <div id="current-date">00:25 Monday, 8 Aug</div>
         <div class="weather-parameters">
           <div class="row">
             <div class="col-6 current-temp">
-              <img src="images/cloudy.png" alt="Cloudy weather" /> 19
+              <img src="images/cloudy.png" alt="Cloudy weather" />
+              <span id="temperature">19</span>
               <span class="unit">
                 <a href="#" id="celsius-link">℃</a> |
                 <a href="#" id="fahrenheit-link">℉</a>
@@ -64,7 +65,7 @@
               <div id="cloud-value">89%</div>
             </div>
             <div class="row">
-              <div class="col-6 weather-description">Cloudy</div>
+              <div class="col-6" id="weather-description">Cloudy</div>
               <div class="col-2 wind">
                 Wind:
                 <div id="wind-value">13 km/h</div>

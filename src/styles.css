@@ -21,20 +21,20 @@
 .btn-primary {
   margin-top: 15px;
 }
-.city {
+#city {
   font-size: 36px;
   padding-top: 10px;
-  color: #fff;
+  color: rgb(0, 0, 0);
 }
 .current-weather-title {
-  color: #fff;
+  color: rgb(0, 0, 0);
   opacity: 60%;
   line-height: 1.5;
   font-size: 16px;
 }
 
 #current-date {
-  color: #fff;
+  color: rgb(0, 0, 0);
   font-size: 17px;
   font-weight: bold;
 }
@@ -55,13 +55,14 @@
 #fahrenheit-link {
   text-decoration: none;
 }
-.weather-description {
-  color: #fff;
+#weather-description {
+  color: rgb(0, 0, 0);
   position: relative;
   top: 15px;
+  text-transform: capitalize;
 }
 .feels {
-  color: #fff;
+  color: rgb(0, 0, 0);
   opacity: 50%;
   font-size: 15px;
   line-break: anywhere;
@@ -70,7 +71,7 @@
   font-weight: bold;
 }
 .cloud-cover {
-  color: #fff;
+  color: rgb(0, 0, 0);
   opacity: 50%;
   font-size: 15px;
   line-break: anywhere;
@@ -79,7 +80,7 @@
   font-weight: bold;
 }
 .wind {
-  color: #fff;
+  color: rgb(0, 0, 0);
   opacity: 50%;
   font-size: 15px;
   line-break: anywhere;
@@ -90,7 +91,7 @@
   font-weight: bold;
 }
 .pressure {
-  color: #fff;
+  color: rgb(0, 0, 0);
   opacity: 50%;
   font-size: 15px;
   line-break: anywhere;
