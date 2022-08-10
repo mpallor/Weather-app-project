@@ -1,20 +1,34 @@
 function displayTemperature(response) {
   let currentTemperature = document.querySelector("#temperature");
   currentTemperature.innerHTML = Math.round(response.data.main.temp);
+
+  celsiusTemperature = response.data.main.temp;
+
   let currentCity = (document.querySelector("#city").innerHTML =
     response.data.name);
+
   let currentDescription = (document.querySelector(
     "#weather-description"
   ).innerHTML = response.data.weather[0].description);
-  console.log(response.data);
+
   let windElement = (document.querySelector("#wind-value").innerHTML =
     Math.round(response.data.wind.speed) + " km/h");
+
   let pressureElement = (document.querySelector("#pressure-value").innerHTML =
     response.data.main.pressure + " hPa");
+
   let feelsElement = (document.querySelector("#feels-temp").innerHTML =
     Math.round(response.data.main.feels_like) + " ℃");
+
   let humidityElement = (document.querySelector("#humidity-value").innerHTML =
     response.data.main.humidity + " %");
+
+  let iconElement = document.querySelector("#icon");
+  iconElement.setAttribute(
+    "src",
+    `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+  );
+  iconElement.setAttribute("alt", response.data.weather[0].description);
 }
 
 function displayCurrentDate() {
@@ -76,7 +90,35 @@ function handleSubmit(event) {
   let cityInputElement = document.querySelector("#city-input");
   searchCity(cityInputElement.value);
 }
-searchCity("Krakow");
 
 let form = document.querySelector("#form-search");
 form.addEventListener("submit", handleSubmit);
+
+function convertToCelsius(event) {
+  event.preventDefault();
+
+  celsius.classList.add("active");
+  fahrenheit.classList.remove("active");
+
+  let temperature = document.querySelector("#temperature");
+  temperature.innerHTML = Math.round(celsiusTemperature);
+}
+
+function convertToFahrenheit(event) {
+  event.preventDefault();
+  let temperature = document.querySelector("#temperature");
+  celsius.classList.remove("active");
+  fahrenheit.classList.add("active");
+  let fahrenheitTemp = (celsiusTemperature * 9) / 5 + 32;
+  temperature.innerHTML = Math.round(fahrenheitTemp);
+}
+
+let celsiusTemperature = null;
+
+let fahrenheit = document.querySelector("#fahrenheit-link");
+fahrenheit.addEventListener("click", convertToFahrenheit);
+
+let celsius = document.querySelector("#celsius-link");
+celsius.addEventListener("click", convertToCelsius);
+
+searchCity("Krakow");

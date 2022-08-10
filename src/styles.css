@@ -104,3 +104,11 @@ footer {
 .git-link {
   text-decoration: none;
 }
+.current-temp .active {
+  color: rgb(0, 0, 0);
+  cursor: default;
+}
+
+.current-temp .active:hover {
+  text-decoration: none;
+}
