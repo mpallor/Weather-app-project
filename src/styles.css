@@ -62,7 +62,7 @@
   text-transform: capitalize;
 }
 .parameter-value {
-  color: blueviolet;
+  color: rgb(0, 0, 0);
 }
 .feels {
   color: rgb(0, 0, 0);

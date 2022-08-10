@@ -17,12 +17,6 @@ function displayTemperature(response) {
     response.data.main.humidity + " %");
 }
 
-let apiKey = "c6250be52ad7bd4f277e12656c8e390e";
-let city = "Krakow";
-let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
-
-axios.get(apiUrl).then(displayTemperature);
-
 function displayCurrentDate() {
   let date = new Date();
   let days = [
@@ -69,9 +63,20 @@ function displayCurrentDate() {
 }
 displayCurrentDate();
 
+function searchCity(city) {
+  let apiKey = "c6250be52ad7bd4f277e12656c8e390e";
+
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+
+  axios.get(apiUrl).then(displayTemperature);
+}
 function handleSubmit(event) {
   event.preventDefault();
-}
 
-let searchButton = document.querySelector(".btn-primary");
-searchButton.addEventListener("submit", handleSubmit);
+  let cityInputElement = document.querySelector("#city-input");
+  searchCity(cityInputElement.value);
+}
+searchCity("Krakow");
+
+let form = document.querySelector("#form-search");
+form.addEventListener("submit", handleSubmit);
