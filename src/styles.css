@@ -58,49 +58,44 @@
 #weather-description {
   color: rgb(0, 0, 0);
   position: relative;
-  top: 15px;
+  top: 19px;
   text-transform: capitalize;
+}
+.parameter-value {
+  color: blueviolet;
 }
 .feels {
   color: rgb(0, 0, 0);
-  opacity: 50%;
+
   font-size: 15px;
   line-break: anywhere;
 }
-#feels-temp {
-  font-weight: bold;
-}
-.cloud-cover {
+
+.humidity {
   color: rgb(0, 0, 0);
-  opacity: 50%;
+
   font-size: 15px;
   line-break: anywhere;
 }
-#cloud-value {
-  font-weight: bold;
-}
+
 .wind {
   color: rgb(0, 0, 0);
-  opacity: 50%;
+
   font-size: 15px;
   line-break: anywhere;
   position: relative;
   left: 10px;
 }
-#wind-value {
-  font-weight: bold;
-}
+
 .pressure {
   color: rgb(0, 0, 0);
-  opacity: 50%;
+
   font-size: 15px;
   line-break: anywhere;
   position: relative;
   left: 10px;
 }
-#pressure-value {
-  font-weight: bold;
-}
+
 footer {
   text-align: center;
   margin-bottom: 10px;

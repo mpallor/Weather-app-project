@@ -1,15 +1,25 @@
 function displayTemperature(response) {
   let currentTemperature = document.querySelector("#temperature");
+  currentTemperature.innerHTML = Math.round(response.data.main.temp);
   let currentCity = (document.querySelector("#city").innerHTML =
     response.data.name);
   let currentDescription = (document.querySelector(
     "#weather-description"
   ).innerHTML = response.data.weather[0].description);
-  currentTemperature.innerHTML = Math.round(response.data.main.temp);
+  console.log(response.data);
+  let windElement = (document.querySelector("#wind-value").innerHTML =
+    Math.round(response.data.wind.speed) + " km/h");
+  let pressureElement = (document.querySelector("#pressure-value").innerHTML =
+    response.data.main.pressure + " hPa");
+  let feelsElement = (document.querySelector("#feels-temp").innerHTML =
+    Math.round(response.data.main.feels_like) + " ℃");
+  let humidityElement = (document.querySelector("#humidity-value").innerHTML =
+    response.data.main.humidity + " %");
 }
 
 let apiKey = "c6250be52ad7bd4f277e12656c8e390e";
-let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=Cracow&appid=${apiKey}&units=metric`;
+let city = "Krakow";
+let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
 
 axios.get(apiUrl).then(displayTemperature);
 
@@ -58,3 +68,10 @@ function displayCurrentDate() {
   displayDate.innerHTML = `${hour}:${minute} ${day}, ${todayDate} ${month}`;
 }
 displayCurrentDate();
+
+function handleSubmit(event) {
+  event.preventDefault();
+}
+
+let searchButton = document.querySelector(".btn-primary");
+searchButton.addEventListener("submit", handleSubmit);
