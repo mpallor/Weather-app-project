@@ -112,3 +112,41 @@ footer {
 .current-temp .active:hover {
   text-decoration: none;
 }
+
+.sections-separator {
+  color: #689fdd;
+  border-bottom: 1px solid #689fdd;
+  width: 90%;
+  margin: 50px 0;
+}
+
+.weather-forecast {
+  text-align: center;
+}
+
+.date {
+  text-align: center;
+  color: rgb(0, 0, 0);
+  font-weight: bolder;
+  margin: 8px 0;
+  font-size: 15px;
+}
+#forecast-icon {
+  margin-bottom: 8px;
+}
+.weather-forecast-min {
+  opacity: 0.5;
+  font-size: 13px;
+}
+.card-forecast {
+  background: rgb(101, 156, 220, 0.3);
+  padding: 20px 10px;
+  border-radius: 10px;
+  margin-left: 7px;
+}
+.first-card {
+  margin-left: 13px;
+}
+.last-card-temp {
+  margin-right: 15px;
+}
