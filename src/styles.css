@@ -18,8 +18,11 @@
   position: relative;
   left: -15px;
 }
-.btn-primary {
+
+.btn.btn-primary {
   margin-top: 15px;
+  background-color: #5f98da;
+  border-color: #5f98da;
 }
 #city {
   font-size: 36px;
@@ -73,7 +76,6 @@
 
 .humidity {
   color: rgb(0, 0, 0);
-
   font-size: 15px;
   line-break: anywhere;
 }
@@ -117,11 +119,17 @@ footer {
   color: #689fdd;
   border-bottom: 1px solid #689fdd;
   width: 90%;
-  margin: 50px 0;
+  margin: 50px 0 15px;
 }
 
-.weather-forecast {
-  text-align: center;
+.forecast-section-title {
+  margin-bottom: 30px;
+  text-transform: uppercase;
+  color: rgb(0, 0, 0);
+  font-size: 17px;
+  letter-spacing: 0;
+  font-weight: 700;
+  font-family: "Lato", sans-serif;
 }
 
 .date {
@@ -145,8 +153,17 @@ footer {
   margin-left: 7px;
 }
 .first-card {
+  text-align: center;
   margin-left: 13px;
+  min-height: 170px;
+  background: rgb(101, 156, 220, 0.3);
+  padding: 20px 10px;
+  border-radius: 10px;
 }
+.first-card:hover {
+  background: rgba(249, 249, 185, 0.3);
+}
+
 .last-card-temp {
   margin-right: 15px;
 }

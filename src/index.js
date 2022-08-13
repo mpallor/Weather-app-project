@@ -53,6 +53,7 @@ function formatDay(timestamp) {
 }
 
 function displayForecast(response) {
+  console.log(response.data);
   let forecast = response.data.daily;
   let forecastElement = document.querySelector("#forecast");
 
@@ -65,11 +66,14 @@ function displayForecast(response) {
         forecastHTML +
         `
             <div class="col-2 first-card">
-              <div class="date">${formatDay(forecastDay.dt)}13.08</div>
+              <div class="date">${formatDay(forecastDay.dt)} ${new Date(
+          forecastDay.dt * 1000
+        ).toLocaleString("en-GB", {
+          month: "short",
+          day: "numeric",
+        })}</div>
               <img
-                src="http://openweathermap.org/img/wn/${
-                  forecastDay.weather[0].icon
-                }@2x.png"
+                src="images/${forecastDay.weather[0].icon}.png"
                 alt=""
                 width="40px"
                 id="forecast-icon"
@@ -124,11 +128,10 @@ function displayTemperature(response) {
   let humidityElement = (document.querySelector("#humidity-value").innerHTML =
     response.data.main.humidity + " %");
 
+  let weatherIcon = response.data.weather[0].icon;
+
   let iconElement = document.querySelector("#icon");
-  iconElement.setAttribute(
-    "src",
-    `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
-  );
+  iconElement.setAttribute("src", `images/${weatherIcon}.png`);
   iconElement.setAttribute("alt", response.data.weather[0].description);
 
   getForecast(response.data.coord);
