@@ -42,7 +42,6 @@ function displayCurrentDate() {
   let displayDate = document.querySelector("#current-date");
   displayDate.innerHTML = `${hour}:${minute} ${day}, ${todayDate} ${month}`;
 }
-displayCurrentDate();
 
 function formatDay(timestamp) {
   let date = new Date(timestamp * 1000);
@@ -66,7 +65,7 @@ function displayForecast(response) {
         forecastHTML +
         `
             <div class="col-2 first-card">
-              <div class="date">${formatDay(forecastDay.dt)} ${new Date(
+              <div class="date">${formatDay(forecastDay.dt)}${new Date(
           forecastDay.dt * 1000
         ).toLocaleString("en-GB", {
           month: "short",
@@ -134,6 +133,7 @@ function displayTemperature(response) {
   iconElement.setAttribute("src", `images/${weatherIcon}.png`);
   iconElement.setAttribute("alt", response.data.weather[0].description);
 
+  displayCurrentDate();
   getForecast(response.data.coord);
 }
 
@@ -154,6 +154,25 @@ function handleSubmit(event) {
 
 let form = document.querySelector("#form-search");
 form.addEventListener("submit", handleSubmit);
+
+function showLocation(position) {
+  let lat = position.coords.latitude;
+  let lon = position.coords.longitude;
+  let units = "metric";
+  let apiKey = "9d31414c22ffca4900ff3577366ff9fc";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${apiKey}&units=${units}`;
+
+  axios.get(apiUrl).then(displayTemperature);
+  axios.get(apiUrl).then(displayCurrentDate);
+}
+
+function getCurrentPosition(event) {
+  event.preventDefault();
+  navigator.geolocation.getCurrentPosition(showLocation);
+}
+
+let currentElement = document.querySelector("#current-position");
+currentElement.addEventListener("click", getCurrentPosition);
 
 function convertToCelsius(event) {
   event.preventDefault();
